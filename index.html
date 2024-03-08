@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Mirrored from proposal.somosquoters.com/show/6UdhYkOA by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 15:31:22 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <title>Desarrollo de Software pagina web</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#2980b9" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Desarrollo de Software de Inventario" />
+    <meta property="og:description" content="Leiner Ortega" />
+    <link rel="icon" href="img/personal/logoT.png" />
+    <meta property="og:image" content="img/imagen.png" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.js"></script>
+    <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=NOTHING" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/9.4.1/validator.min.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.es"></script>
+    <script>
+        var intl = Intl;
+        var signaturePad;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script>
+        moment.locale('es');
+        // moment.tz.setDefault('Europe/Madrid');
+    </script>
+    <!-- <script>
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            $('.youtube-video').each(function() {
+                var id = $(this).attr('id')
+                var mute = $(this).data('mute')
+                var player = new YT.Player(id, {
+                    height: '100%',
+                    width: '100%',
+                    videoId: getIdFromUrl($(this).data('url')),
+                    playerVars: {
+                        autoplay: 1,
+                        autohide: 1,
+                        rel: 0,
+                        showinfo: 0,
+                        controls: 0,
+                        disablekb: 1,
+                        enablejsapi: 1,
+                        iv_load_policy: 3
+                    },
+                    events: {
+                        'onReady': function(event) {
+                            if (mute) event.target.mute()
+                        },
+                        'onStateChange': function(event) {
+                            if (event.data === 0) event.target.playVideo()
+                        }
+                    }
+                });
+            })
+        }
+
+        function getIdFromUrl(url) {
+            var video_id = url.split('v=')[1];
+            if (!video_id) video_id = url.split('https://proposal.somosquoters.com/show/youtu.be/')[1];
+            var ampersandPosition = video_id.indexOf('&');
+            if (ampersandPosition !== -1) {
+                video_id = video_id.substring(0, ampersandPosition);
+            }
+            return video_id
+        }
+    </script> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
+        type="text/css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        type="text/css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,400i,700,700i|Trirong:400,400i,700,700i|Taviraj:400,400i,700,700i|Droid+Serif:400,400i,700,700i|Cormorant+Garamond:400,400i,700,700i|Roboto+Slab:400,400i,700,700i|Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i|Lato:400,400i,700,700i|Raleway:400,400i,700,700i|Libre+Franklin:400,400i,700,700i|Rubik:400,400i,700,700i|Bungee+Inline:400,400i,700,700i|Lalezar:400,400i,700,700i|Nova+Flat:400,400i,700,700i|Lobster|Inconsolata:400,400i,700,700i|Roboto+Mono:400,400i,700,700i|VT323:400,400i,700,700i|Droid+Sans+Mono:400,400i,700,700i|Ubuntu+Mono:400,400i,700,700i|Indie+Flower:400,400i,700,700i|Amatic+SC:400,400i,700,700i|Shadows+Into+Light:400,400i,700,700i|Bad+Script:400,400i,700,700i|Gloria+Hallelujah:400,400i,700,700i|Playfair+Display:400,400i,700,700i|Lora:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Libre+Baskerville:400,400i,700|Abril+Fatface|Patua+One|Alfa+Slab+One|Carter+One|Shrikhand|Fugaz+One|Cherry+Swash:400,700|Montserrat:400,400i,700,700i|Oswald:400,700|Titillium+Web:400,400i,700,700i|Work+Sans:400,700|Quicksand:400,700|Lekton:400,400i,700|Nunito+Sans:400,400i,700,700i|Pacifico|Caveat:400,700|Cutive+Mono|Gruppo"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="styles/quote-view.css" type="text/css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        type="text/css" />
+    <style>
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 52px;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;
+font-family: -apple-system,BlinkMacSystemFont," Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple
+    Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size: 1rem; font-weight: 400; line-height:
+    1.5; color: #212529; text-align: justyfy; background-color: #fff;">
+    <div id="app">
+        <div data-server-rendered="true">
+
+            <div>
+                <section id="quote-section-0" class="quote-section-0" style="background-color: #FFFFFF;
+                /* background-image: url(https://cdn.filestackcontent.com/kLwUU0dfQlu7vkd3XTJb); */
+                background-image: url(img/personal/logo-tecnologyy.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+                color: hsl(0, 0%, 100%);">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;">
+                            <div>
+                                <h1 style="text-align: center;"></h1>
+                                <h1 style="text-align: center;"><strong>Diseño y Desarrollo de Pagina Web</strong></h1>
+                                <!-- <h2 style="text-align: center;"><strong>INNOVA TECHNOLOGY </strong></h2> -->
+                                <p style="text-align: center;"></p>
+                                <p style="text-align: center;"></p>
+                                <p style="text-align: center;"></p>
+                                <p style="text-align: center;"></p>
+                                <p style="text-align: center;">
+                                    <!-- <strong>Neiva 02/08/2022<br />Válido hasta el
+                                        02/09/2022<br />(Tiempo estimado: 1 mes)<br />Versión 1.0
+                                    </strong></p> -->
+                                <p> </p>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-1" class="quote-section-1">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;font-family: 'Open Sans', sans-serif;
+                        font-size: 18px;
+                        color: #000000 !important;
+                        font-weight: 400;
+                        margin-top: 0 !important;
+                        margin-bottom: 20px !important;">
+                            <div>
+                                <h1>INNOVA TECHNOLOGY - Desarrollo de Software y paginas web Innovadoras</h1>
+                                <p style="text-align: justify;">En INNOVA TECHNOLOGY, nos dedicamos al desarrollo de
+                                    software y paginas web Innovadoras para una amplia gama de sectores industriales.
+                                    Nuestros productos están diseñados para satisfacer las necesidades de empresas de
+                                    diferentes categorías, ofreciendo soluciones a medida para cada cliente.</p>
+
+                                <strong>
+                                    <h2>Nuestros Productos y Servicios</h2>
+                                </strong>
+                                <p style="text-align: justify;">Desarrollamos una amplia gama de soluciones utilizando
+                                    las últimas tecnologías disponibles. Algunas de nuestras características distintivas
+                                    incluyen:</p>
+                                <ul style="text-align: justify;">
+                                    <li>Desarrollo de sitios web y aplicaciones web personalizados utilizando
+                                        tecnologías como JavaScript, Vue.js, Laravel, Angular, Node.js, Astro y
+                                        WordPress, entre otras.</li>
+                                    <li>Software multidispositivo que se adapta a móviles, tabletas y ordenadores, con
+                                        un enfoque en la accesibilidad para todas las personas.</li>
+                                    <li>Diseño moderno basado en las tendencias del mercado, asegurando una experiencia
+                                        de usuario atractiva y funcional.</li>
+                                    <li>Seguridad informática de alto nivel con desarrollo a medida para proteger los
+                                        datos confidenciales de nuestros clientes.</li>
+                                    <li>Herramientas de administración y gestión del software, usuarios y inventario
+                                        integradas en todas nuestras soluciones.</li>
+                                    <li>Preparación para la escalabilidad y desarrollo de aplicaciones móviles
+                                        complementarias.</li>
+                                </ul>
+                                <p style="text-align: justify;">En INNOVA TECHNOLOGY, tenemos una sólida experiencia en
+                                    la creación de software legible y rápido, adaptado a las necesidades de navegación
+                                    actuales.</p>
+
+
+                                <h2>Nota Importante</h2>
+                                <p style="text-align: justify;">Es importante tener en cuenta que nuestra cotización no
+                                    incluye gastos de hosting y dominio. Sin embargo, ofrecemos opciones de pago para
+                                    hosting y dominio por 6 meses o un año, con mantenimiento y soporte gratuito durante
+                                    los dos primeros meses.</p>
+                                <ul style="text-align: justify;">
+                                    <li><b>Hosting:</b> Ofrecemos servicios de hosting que te permiten publicar tu sitio
+                                        o aplicación web en Internet.</li>
+                                    <li><b>Dominio:</b> Proporcionamos nombres de dominio exclusivos y únicos para la
+                                        identificación de tu sitio en Internet.</li>
+                                    <li>En caso de no contar con estos servicios, estaremos encantados de recomendarte a
+                                        nuestros proveedores de confianza.</li>
+                                </ul>
+
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-2" class="quote-section-2" style="background-color: #FFFFFF;
+                background-image: url(https://cdn.filestackcontent.com/rGqycy9nSoWPxIiELpDp);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;">
+                            <div>
+                                <h1 style="text-align: justyfy; text-rendering: optimizeLegibility;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                line-height: 150% !important;
+                                font-family: 'Open Sans', sans-serif;
+                                font-size: 52px;
+                                color: #000000 !important;
+                            "><strong>Así lo hacemos</strong></h1>
+                                <p style="text-align: justyfy;font-family: 'Open Sans', sans-serif;
+                                font-size: 18px;
+                                color: #000000 !important;">
+
+
+                                    <em>
+                                    <b>Para el desarrollo del software no solo debemos
+                                            fijarnos en que sea bonito. Debemos atender a ciertos criterios técnicos y
+                                            de usabilidad que a primera vista pueden pasar desapercibidos. Y, por
+                                            supuesto, hacer que el motor funcione y se adapte al flujo de trabajo
+                                            habitual del cliente, nunca al revés.</b></em></p>
+
+
+                                    <em>
+                                        <p><b>Para el desarrollo de la página web "Rivera Travel" en Astro 4.0, nos
+                                                enfocamos en cumplir con criterios técnicos y de usabilidad esenciales.
+                                                No solo buscamos un diseño atractivo, sino que también nos aseguramos de
+                                                que el motor funcione y se adapte al flujo de trabajo habitual del
+                                                cliente, priorizando siempre sus necesidades.</b></p>
+
+                                        <p>A continuación, mostraremos <strong>los pasos para llevar a cabo el
+                                                desarrollo de la página web "Rivera Travel":</strong></p>
+                                    </em>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-3" class="quote-section-3" style="text-align: justyfy;font-family: 'Open Sans', sans-serif;
+                font-size: 18px;
+                color: #000000 !important;
+                background-color: #FFFFFF;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;">
+                    <!---->
+                    <!---->
+                    <div>
+                    </div>
+
+                    <div>
+                        <section id="quote-section-3" class="quote-section-3"
+                            style="text-align: justify; font-family: 'Open Sans', sans-serif; font-size: 18px; color: #000000 !important; background-color: #FFFFFF; background-repeat: no-repeat; background-size: cover; background-position: center;">
+                            <div class="container">
+                                <div class="normalized-quote-styles"
+                                    style="position:relative; text-align: justify !important;">
+                                    <div>
+
+                                        <h1
+                                            style="font-family: 'Open Sans', sans-serif; font-size: 52px; color: #000000 !important;">
+                                            1. <strong>Investigación</strong></h1>
+                                        <p>Comenzaremos con una investigación exhaustiva para comprender las necesidades
+                                            específicas de "Rivera Travel" y definir los objetivos del proyecto.</p>
+                                        <br />
+
+                                        <h1
+                                            style="font-family: 'Open Sans', sans-serif; font-size: 52px; color: #000000 !important;">
+                                            2. <strong>Prototipo</strong></h1>
+                                        <p>Diseñaremos prototipos ágiles para visualizar la estructura básica de la
+                                            página web, agilizando así la fase de diseño y facilitando la aprobación de
+                                            conceptos fundamentales.</p>
+                                        <br />
+
+                                        <h1
+                                            style="font-family: 'Open Sans', sans-serif; font-size: 52px; color: #000000 !important;">
+                                            3. <strong>Diseño</strong></h1>
+                                        <p>Los diseñadores darán forma al diseño final, teniendo en cuenta tanto
+                                            criterios estéticos como de usabilidad para garantizar una experiencia de
+                                            usuario excepcional.</p>
+
+                                        <h1
+                                            style="font-family: 'Open Sans', sans-serif; font-size: 52px; color: #000000 !important;">
+                                            4. <strong>Desarrollo</strong></h1>
+                                        <p>En esta fase, implementaremos el desarrollo de la página web utilizando Astro
+                                            4.0. Integraremos funcionalidades esenciales, como la página de inicio,
+                                            formulario de inicio de sesión, módulo de usuarios, configuración y
+                                            parámetros, gestión de inventario y mantenimientos.</p>
+
+                                        <h1
+                                            style="font-family: 'Open Sans', sans-serif; font-size: 52px; color: #000000 !important;">
+                                            5. <strong>Puesta en marcha</strong></h1>
+                                        <p>Con el desarrollo finalizado y aprobado, subiremos el proyecto al servidor
+                                            web, realizando pruebas y correcciones pertinentes. Además, implementaremos
+                                            algoritmos de estadísticas y analíticas de Google para medir el rendimiento
+                                            y comportamiento del sitio web.</p>
+                                        <img src="/img/home.png" alt="home" />
+
+                                        <section id="project-options" class="project-options">
+                                            <div class="container">
+                                                <h2
+                                                    style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 36px; color: #000000;">
+                                                    Opciones de Desarrollo de la Página Web
+                                                </h2>
+                                                <div style="margin-top: 30px;">
+                                                    <div style="margin-bottom: 40px;">
+                                                        <h3
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 24px; color: #000000;">
+                                                            <strong>
+
+                                                                Opción 1: Página Web Estática
+                                                            </strong>
+                                                        </h3>
+                                                        <p
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #000000;">
+                                                            Desarrollaremos una página web estática, perfecta para
+                                                            presentar información básica de manera elegante y eficiente.
+                                                            Esta opción es ideal para empresas que desean una presencia
+                                                            online simple pero efectiva. Incluye diseño responsive y
+                                                            optimización de velocidad. Precio estimado: $1,560,000.
+                                                        </p>
+                                                        <ul
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #000000; list-style-type: disc; margin-left: 20px;">
+                                                            <li>Presentación de información básica y esencial</li>
+                                                            <li>Diseño responsive para dispositivos móviles</li>
+                                                            <li>Optimización de velocidad de carga</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div style="margin-bottom: 40px;">
+                                                        <h3
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 24px; color: #000000;">
+                                                            <strong>
+
+                                                                Opción 2: Página Web con Administrador
+                                                            </strong>
+                                                        </h3>
+                                                        <p
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #000000;">
+                                                            Desarrollaremos una página web con un completo sistema
+                                                            administrador integrado. Desde este panel, el cliente podrá
+                                                            actualizar contenido, gestionar productos y servicios, así
+                                                            como interactuar con los usuarios. Ideal para empresas que
+                                                            desean un control total sobre su presencia online. Precio
+                                                            estimado: $3,000,000.
+                                                        </p>
+                                                        <ul
+                                                            style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #000000; list-style-type: disc; margin-left: 20px;">
+                                                            <li>Sistema administrador intuitivo y completo</li>
+                                                            <li>Actualización de contenido y gestión de productos</li>
+                                                            <li>Interacción directa con usuarios y clientes</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-5" class="quote-section-5"
+                    style="background-color: rgba(234, 236, 238, 0.212);">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;font-family: 'Open Sans', sans-serif;
+                            font-size: 18px;
+                            color: #000000 !important;
+                            ">
+                            <div>
+                                <h1 style="font-family: 'Open Sans', sans-serif;
+                                    font-size: 52px;
+                                    color: #000000 !important;"><strong>Valor total pagina Web estadística</strong>
+                                </h1>
+                                <p><em>
+                                        <br>
+                                        <br>
+                                        El valor total de la Inversion es de <b>
+                                            ($1`560.000)</b>
+                                        <br>
+                                        <br>
+                                        El tiempo estimado de entrega es de <b>1 meses</b>
+                                    </em></p>
+                            </div>
+                            <div>
+                                <h1 style="font-family: 'Open Sans', sans-serif;
+                                    font-size: 52px;
+                                    color: #000000 !important;"><strong>Valor total Pagina Web con
+                                        administrodor</strong></h1>
+                                <p><em>
+                                        <br>
+                                        <br>
+                                        El valor total de la Inversion es de <b>
+                                            ($3`000.000)</b>
+                                        <br>
+                                        <br>
+                                        El tiempo estimado de entrega es de <b>2 meses</b>
+                                    </em></p>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-4" class="quote-section-4" style="background-color: #FFFFFF;
+                background-image: url(https://cdn.filestackcontent.com/E4LafwtZR4eY4cKE2fr8);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;font-family: 'Open Sans', sans-serif;
+                        font-size: 18px;
+                        color: #000000 !important;">
+                            <div>
+                                <h1 style="font-family: 'Open Sans', sans-serif;
+                                font-size: 52px;
+                                color: #000000 !important;">
+                                    <strong>Alcance del proyecto</strong>
+                                </h1>
+                                <p style="text-align: justify;">En INNOVA TECHNOLOGY, nuestro enfoque va más allá de
+                                    simplemente desarrollar proyectos individuales. Nos esforzamos por construir
+                                    soluciones integrales que transformen el panorama de nuestros clientes. Con Travel
+                                    Rivera, una empresa de ventas de paquetes turísticos en Rivera Huila, estamos
+                                    forjando una experiencia digital que trasciende las expectativas del mercado local.
+                                    <br>
+                                    <br>
+                                    Travel Rivera, una iniciativa de INNOVA TECHNOLOGY, surge como un negocio emergente
+                                    con una visión clara: ofrecer una pagina web  intuitiva y accesible para la reserva
+                                    de tiquetes turísticos en la pintoresca región de Rivera Huila. Con un enfoque en la
+                                    innovación y la tecnología, buscamos establecer un estándar de excelencia en la
+                                    industria del turismo local.
+                                </p>
+                                <h2><strong>Lo que incluye</strong></h2>
+                                <p>Todos los apartados que has podido leer anteriormente se incluyen en la ejecución de
+                                    este proyecto. </p>
+                                <p><strong>Y garantía de un año para subsanar posibles deficiencias de programación en
+                                        el proyecto.</strong></p>
+                                <h2><strong>Lo que no incluye</strong></h2>
+                                <ul>
+                                    <li>Redacción de contenidos que no se especifiquen.
+                                        <br />
+                                        <br />
+                                    </li>
+                                    <li>Contenido audio visual no especificado (imagenes, videos, etc).
+                                        <br />
+                                        <br />
+                                    </li>
+                                    <!-- <li>Mantenimiento de la web con posterioridad a la entrega del proyecto (irá con su presupuesto posterior una vez esté puesta en marcha).</li> -->
+                                </ul>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div>
+                <section id="quote-section-5" class="quote-section-5"
+                    style="background-color: rgba(234, 236, 238, 0.212);">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;font-family: 'Open Sans', sans-serif;
+                            font-size: 18px;
+                            color: #000000 !important;
+                            ">
+                            <div>
+                                <h1 style="font-family: 'Open Sans', sans-serif;
+                                    font-size: 52px;
+                                    color: #000000 !important;"><strong>Tiempo estimado de entrega</strong></h1>
+                                <p><em>
+                                        <br>
+                                        <br>
+                                        El tiempo estimado de desarrollo es de <b>1 meses</b> y <b></b>
+                                        de implementación y pruebas
+                                    </em></p>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <section id="quote-section-6" class="quote-section-6" style="background-color: #34495e;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                min-height: 80px !important;">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;">
+                            <div>
+                                <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;
+                                font-size: 52px;
+                                color: #FFFFFF !important;"><strong>Nuestro equipo</strong></h1>
+                                <p style="text-align: center;font-family: 'Lato', sans-serif;
+                                font-size: 18px;
+                                color: #FFFFFF !important;">Estas son las personas que cuidarán de tu proyecto.</p>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-7" class="quote-section-7">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;">
+                            <div>
+                                <h1 style="text-align: justify; text-rendering: optimizeLegibility;
+                                    -webkit-font-smoothing: antialiased;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    line-height: 150% !important;
+                                    font-family: 'Open Sans', sans-serif;
+                                    font-size: 32px;
+                                    color: #000000 !important; ">
+                                    <strong>JEFE DE PROYECTO</strong>
+                                </h1>
+                                <p style="text-align: justify;font-family: 'Open Sans', sans-serif;
+                                    font-size: 18px;
+                                    color: #000000 !important;"><em>Es el encargado de realizar el análisis de los
+                                        requerimientos del cliente. De hacer el seguimiento diario de las tareas y de
+                                        resolver cualquier problema de comunicación con otros equipos si los hubiera. En
+                                        el caso de que este equipo se convierta en cliente de otro equipo, esta persona
+                                        es la que se encarga de realizar la comunicación con ellos. Obligatoriamente
+                                        tiene que tener un background de programador, necesita entender a los
+                                        programadores y la problemática a la que se enfrentan diariamente para poder
+                                        asegurar que los requerimientos recogen toda la información necesaria para poder
+                                        realizar la tarea. Es el responsable de que la implementación de esos
+                                        requerimientos se haga correctamente.</em></p>
+                                <p style="text-align: justify;font-family: 'Open Sans', sans-serif;
+                                    font-size: 18px;
+                                    color: #000000 !important;"><em>Nuestros jefes de proyecto son Oscar Daniel Ruíz
+                                        Urrea y Sebastián Tovar Chavez, quienes también son desarrolladores web y
+                                        socios. Ellos mismos realizan el diseño UI-UX y prueban la página web.</em></p>
+                            </div>
+                            <br>
+                            <div>
+                                <h1 style="text-align: justify; text-rendering: optimizeLegibility;
+                                    -webkit-font-smoothing: antialiased;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    line-height: 150% !important;
+                                    font-family: 'Open Sans', sans-serif;
+                                    font-size: 32px;
+                                    color: #000000 !important; ">
+                                    <strong>DESARROLLADOR</strong>
+                                </h1>
+                                <p style="text-align: justify;font-family: 'Open Sans', sans-serif;
+                                    font-size: 18px;
+                                    color: #000000 !important;"><em>Es un programador, que se encarga de ejecutar el
+                                        trabajo asignado por el líder del equipo. En un proyecto de software,
+                                        normalmente el 20% del código constituye arquitectura y el 80% restante consiste
+                                        en utilizar esa arquitectura para completar los requerimientos. Los
+                                        desarrolladores son los encargados de completar ese 80%.</em></p>
+                            </div>
+                            <br>
+                            <div>
+                                <h1 style="text-align: justify; text-rendering: optimizeLegibility;
+                                    -webkit-font-smoothing: antialiased;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    line-height: 150% !important;
+                                    font-family: 'Open Sans', sans-serif;
+                                    font-size: 32px;
+                                    color: #000000 !important; ">
+                                    <strong>DISEÑADOR GRÁFICO UI - UX</strong>
+                                </h1>
+                                <p style="text-align: justify;font-family: 'Open Sans', sans-serif;
+                                    font-size: 18px;
+                                    color: #000000 !important;"><em>Este rol consiste en, a nivel de UX, realizar los
+                                        flujos de trabajo dentro de una aplicación a nivel de mockups, para determinar
+                                        posteriormente, los diseños que habrá que realizar y cómo se va a comportar la
+                                        aplicación. Posteriormente, es el encargado de realizar el diseño gráfico de las
+                                        pantallas que componen la aplicación, atendiendo a las reglas de UX que
+                                        determinen la posición de los elementos, los esquemas de colores, tipografías,
+                                        etc.</em></p>
+                            </div>
+                            <br>
+                            <div>
+                                <h1 style="text-align: justify; text-rendering: optimizeLegibility;
+                                    -webkit-font-smoothing: antialiased;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    line-height: 150% !important;
+                                    font-family: 'Open Sans', sans-serif;
+                                    font-size: 32px;
+                                    color: #000000 !important; ">
+                                    <strong>TESTER</strong>
+                                </h1>
+                                <p style="text-align: justify;font-family: 'Open Sans', sans-serif;
+                                    font-size: 18px;
+                                    color: #000000 !important;"><em>Las pruebas son una parte importante para asegurar
+                                        que el software funciona de la manera que debería. El papel de ‘tester’ se
+                                        realiza a menudo por los desarrolladores para los aspectos técnicos y los
+                                        usuarios para los aspectos funcionales. Un problema que surge de hacer a los
+                                        desarrolladores probar su propio código es que, no importa lo bueno que sean, se
+                                        ven influidos por la forma de su código fue creado. Cuando se prueba, se tendrá
+                                        en cuenta esas mismas situaciones que que ya se tuvieron en cuenta a la hora de
+                                        escribirlo.
+                                        <br>
+                                        Si se prueba código de otra persona, se puede pensar en escenarios que la otra
+                                        persona no los pensó. Así que incluso si no se tiene un equipo de Testers
+                                        dedicado, es una buena idea que cada desarrollador pruebe código de otro
+                                        desarrollador, en lugar del suyo propio.</em></p>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div>
+                <section id="quote-section-4" class="quote-section-4" style="background-color: #FFFFFF;
+                    background-image: url(https://cdn.filestackcontent.com/E4LafwtZR4eY4cKE2fr8);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;font-family: 'Open Sans', sans-serif;
+                            font-size: 18px;
+                            color: #000000 !important;">
+                            <div>
+                                <h1 style="font-family: 'Open Sans', sans-serif;
+                                    font-size: 52px;
+                                    color: #000000 !important;"><strong>Condiciones legales</strong></h1>
+                                <p style="text-align: justify;">Esta propuesta hace parte integral del contrato.</p>
+                                <br>
+                                <br>
+                                <h2><strong>Requisitos para iniciar el proyecto</strong></h2>
+                                <ul>
+                                    <li>Será cuestión del cliente facilitar el material necesario (fotos, vídeos
+                                        corporativos, etc.) necesarios para la ejecución de este proyecto.
+                                        <br />
+                                        <br />
+                                    </li>
+                                    <li>Accesos de hosting y dominio.</li>
+                                </ul>
+                                <br>
+
+                                <h2><strong>Forma de pago</strong></h2>
+                                <p style="text-align: justify;">A definir con el contratante.</p>
+                                <ul>
+                                    <li>Un único pago.
+                                        <br />
+                                    </li>
+
+                                    <li>Pago mensual.
+                                        <br />
+                                    </li>
+
+                                    <li>Por avances.
+                                        <br />
+                                    </li>
+                                </ul>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <section id="quote-section-8" class="quote-section-8" style="background-color: #34495e;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                border-bottom: none !important;
+                min-height: 180px !important;
+                padding: 30px 0 30px 0 !important;">
+                    <!---->
+                    <!---->
+                    <div class="container">
+                        <div class="normalized-quote-styles" style="position:relative;">
+                            <div>
+                                <!-- <img src="img/terminal.jpge" alt=""> -->
+                                <h1 style="text-align: center;"><strong>¡Gracias!</strong></h1>
+                                <h2 style="text-align: center; color: #eeeeee;"><strong>Estamos en contacto :-)</strong>
+                                </h2>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
